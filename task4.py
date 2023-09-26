@@ -15,3 +15,17 @@ Enter a length in centimeters: 32
 32 centimeters is 1 feet and 1 inches
 ```
 """
+
+import math
+
+length_cm = float(input("enter how many centimeters :"))
+
+length_inches = length_cm * 0.393701
+
+
+feet = int(length_inches // 12)
+remaining_inches = round(length_inches % 12)
+
+print(f"{length_cm} centimeters is approximately {feet} feet and {remaining_inches} inches.")
+
+

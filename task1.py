@@ -18,3 +18,18 @@ Enter actual : 14
 The percent difference is 16.67%
 ```
 '''
+expected = float(input("Enter expected: "))
+actual = float(input("Enter actual: "))
+
+
+percent_difference = ((actual - expected) / expected) * 100
+
+rounded_percent_difference = round(percent_difference, 2)
+
+print(f"The percent difference is {rounded_percent_difference}%")
+#You can run this code, and it will ask the user to input the expected and actual values, calculate the percent difference, and display the result rounded to 2 decimal places.
+
+
+
+
+

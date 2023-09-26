@@ -21,3 +21,30 @@ Enter your income: 125000
 Your federal income tax is: 24411.7
 
 '''
+
+income = float(input("Enter your income :"))  
+
+
+tax_brackets = [
+    (49020, 0.15),
+    (98040, 0.205),
+    (151978, 0.26),
+    (216511, 0.29)
+]
+
+
+tax = 0
+remaining_income = income
+
+for bracket in tax_brackets:
+    bracket_limit, bracket_rate = bracket
+    if remaining_income <= 0:
+        break
+    if remaining_income > bracket_limit:
+        taxable_amount = bracket_limit
+    else:
+        taxable_amount = remaining_income
+    tax += taxable_amount * bracket_rate
+    remaining_income -= taxable_amount
+
+print(f"Federal Income Tax for an income of ${income:,.2f} is ${tax:,.2f}")
